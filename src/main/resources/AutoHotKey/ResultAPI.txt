@@ -1,0 +1,4 @@
+{
+  "password": "pistol",
+  "email": "eve.holt@reqres.in"
+}
