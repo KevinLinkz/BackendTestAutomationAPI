@@ -1,0 +1,88 @@
+30-05-2022 03:08:35   Info   Load Datatable at : K:\Kerjaan\Tokopedia\Project Automation\BackendTestAutomationAPI\target\classes\Datatable\API Testing 2.xlsm
+30-05-2022 03:08:35   Info   Load Data API
+30-05-2022 03:08:35   Info   Start Data-1
+30-05-2022 03:08:35   Info   Create Rest Assure
+30-05-2022 03:08:37   Info   Request Body :
+ {
+  "order_status": "New",
+  "order_description": "sample description",
+  "last_updated_timestamp": 1653854915,
+  "order_id": "xxxxxx"
+}
+30-05-2022 03:08:40   Info   Responses : 
+<html>
+  <head>
+    <title>301 Moved Permanently</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>301 Moved Permanently</h1>
+    </center>
+    <hr/>
+    <center>nginx</center>
+  </body>
+</html>
+30-05-2022 03:08:43   Fail   Status Code Actual: 301 Status Code Expected:200. 
+30-05-2022 03:08:45   Fail   Response Failed
+30-05-2022 03:08:45   Info   Start Data-2
+30-05-2022 03:08:45   Info   Create Rest Assure
+30-05-2022 03:08:47   Info   Request Body :
+ {
+  "password": "pistol",
+  "email": "eve.holt@reqres.in"
+}
+30-05-2022 03:08:50   Info   Responses : 
+{
+    "id": 4,
+    "token": "QpwL5tke4Pnpja7X4"
+}
+30-05-2022 03:08:52   Pass   Status Code Actual: 200 Status Code Expected:200. 
+30-05-2022 03:08:54   Pass   Response is the same as expectation
+30-05-2022 03:08:54   Info   Start Data-3
+30-05-2022 03:08:54   Info   Create Rest Assure
+30-05-2022 03:08:56   Info   Request Body :
+ {
+  "password": "pistols",
+  "email": "xxxx"
+}
+30-05-2022 03:08:59   Info   Responses : 
+{
+    "error": "Note: Only defined users succeed registration"
+}
+30-05-2022 03:09:01   Pass   Status Code Actual: 400 Status Code Expected:400. 
+30-05-2022 03:09:03   Fail   Response didn't same expected
+30-05-2022 03:09:03   Info   Start Data-4
+30-05-2022 03:09:03   Info   Create Rest Assure
+30-05-2022 03:09:05   Info   Request Body :
+ {
+  "password": "cityslicka",
+  "email": "eve.holt@reqres.in"
+}
+30-05-2022 03:09:08   Info   Responses : 
+{
+    "token": "QpwL5tke4Pnpja7X4"
+}
+30-05-2022 03:09:10   Pass   Status Code Actual: 200 Status Code Expected:200. 
+30-05-2022 03:09:12   Pass   Response is the same as expectation
+30-05-2022 03:09:12   Info   Start Data-5
+30-05-2022 03:09:12   Info   Create Rest Assure
+30-05-2022 03:09:14   Info   Request Body :
+ {}
+30-05-2022 03:09:18   Info   Responses : 
+{
+    "error": "Missing email or username"
+}
+30-05-2022 03:09:20   Pass   Status Code Actual: 400 Status Code Expected:400. 
+30-05-2022 03:09:22   Pass   Response error is the same as expectation
+30-05-2022 03:09:22   Info   Start Data-6
+30-05-2022 03:09:22   Info   Create Rest Assure
+30-05-2022 03:09:24   Info   Responses : 
+{
+    "id": 1591,
+    "name": "Anunay Kapoor",
+    "email": "kapoor_anunay@heller-west.com",
+    "gender": "male",
+    "status": "active"
+}
+30-05-2022 03:09:26   Pass   Status Code Actual: 200 Status Code Expected:200. 
+30-05-2022 03:09:28   Pass   Response is the same as expectation
