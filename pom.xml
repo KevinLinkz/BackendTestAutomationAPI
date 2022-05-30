@@ -36,8 +36,6 @@
             <version>4.1.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.assertthat/selenium-shutterbug -->
-
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
@@ -54,8 +52,6 @@
             <artifactId>rest-assured</artifactId>
             <version>4.4.0</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 
 
     </dependencies>
