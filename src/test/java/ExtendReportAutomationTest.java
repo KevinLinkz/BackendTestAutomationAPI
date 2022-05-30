@@ -1,4 +1,4 @@
-import com.automationTest.utilites.reports.ExtentReportService;
+import com.automationTest.utilities.reports.ExtentReportService;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

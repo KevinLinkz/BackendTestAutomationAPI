@@ -1,6 +1,6 @@
-package com.automationTest.utilites.reports;
+package com.automationTest.utilities.reports;
 
-import com.automationTest.utilites.globaldata.MyConfig;
+import com.automationTest.utilities.globaldata.MyConfig;
 import com.automationTest.mainGUI.MainAutomationEngine;
 
 import java.io.File;

@@ -1,8 +1,8 @@
-package com.automationTest.utilites.datatable;
+package com.automationTest.utilities.datatable;
 
-import com.automationTest.utilites.API.API;
-import com.automationTest.utilites.reports.ExtentReportService;
-import com.automationTest.utilites.reports.LogsService;
+import com.automationTest.utilities.API.API;
+import com.automationTest.utilities.reports.ExtentReportService;
+import com.automationTest.utilities.reports.LogsService;
 import com.aventstack.extentreports.Status;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;

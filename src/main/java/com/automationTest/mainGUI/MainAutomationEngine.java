@@ -1,6 +1,6 @@
 package com.automationTest.mainGUI;
 
-import com.automationTest.utilites.globaldata.MyConfig;
+import com.automationTest.utilities.globaldata.MyConfig;
 import com.automationTest.mainThread.MainEngine;
 
 import javax.swing.*;

@@ -1,6 +1,6 @@
-package com.automationTest.utilites.IO;
+package com.automationTest.utilities.IO;
 
-import com.automationTest.utilites.globaldata.MyConfig;
+import com.automationTest.utilities.globaldata.MyConfig;
 
 import java.io.File;
 import java.io.IOException;

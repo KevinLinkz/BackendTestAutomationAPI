@@ -1,9 +1,9 @@
-package com.automationTest.utilites.API;
+package com.automationTest.utilities.API;
 
-import com.automationTest.utilites.IO.IOService;
-import com.automationTest.utilites.IO.ScreenshotService;
-import com.automationTest.utilites.reports.ExtentReportService;
-import com.automationTest.utilites.reports.LogsService;
+import com.automationTest.utilities.IO.IOService;
+import com.automationTest.utilities.IO.ScreenshotService;
+import com.automationTest.utilities.reports.ExtentReportService;
+import com.automationTest.utilities.reports.LogsService;
 import com.aventstack.extentreports.Status;
 import com.google.gson.GsonBuilder;
 import io.restassured.RestAssured;

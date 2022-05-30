@@ -1,4 +1,4 @@
-package com.automationTest.utilites.globaldata;
+package com.automationTest.utilities.globaldata;
 
 public class MyConfig {
 
