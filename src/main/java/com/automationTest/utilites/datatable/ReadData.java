@@ -1,5 +1,9 @@
 package com.automationTest.utilites.datatable;
 
+import com.automationTest.utilites.API.API;
+import com.automationTest.utilites.reports.ExtentReportService;
+import com.automationTest.utilites.reports.LogsService;
+import com.aventstack.extentreports.Status;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -14,6 +18,60 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ReadData {
+    public ReadData() {
+    }
+
+    public void testScenario(ExtentReportService extentReportService, String strPathDatatable) {
+        //Create Report Scenario
+        extentReportService.createNewTest("Init Datatable", "Kevin", "Testing API", "Api platform");
+
+        //init Read Data Functions & API Functions
+        API apiTest = new API();
+
+        //Lopping Data Excel
+        try {
+            Sheet sheetDataInfo = readDataTestCase("Datatable", strPathDatatable);
+            LogsService.appendLog(Status.INFO.toString(), "Load Datatable at : " + strPathDatatable, extentReportService, "");
+
+            int rowCountDataInfo = sheetDataInfo.getLastRowNum() - sheetDataInfo.getFirstRowNum();
+            LogsService.appendLog(Status.INFO.toString(), "Load Data API", extentReportService, "");
+            for (int i = 1; i <= rowCountDataInfo ; i++) {
+
+                //We can put URL, Header, Token,dst. For Configuration
+                //Get all Parameters
+                Map<String, Object> mapInfoTesting = getData(i, sheetDataInfo);
+
+                Sheet sheetParameterBody = readDataTestCase(mapInfoTesting.get("Parameter Body").toString(), strPathDatatable);
+                Sheet sheetExpectedBody = readDataTestCase(mapInfoTesting.get("Expected Body").toString(), strPathDatatable);
+                Sheet sheetExpectedResponse = readDataTestCase(mapInfoTesting.get("Expected Response").toString(), strPathDatatable);
+
+                Map<String, Object> mapParametersBody = getData(i, sheetParameterBody);
+                Map<String, Object> mapExpectedResponse = getData(i, sheetExpectedResponse);
+                Map<String, Object> mapExpectedBody = getData(i, sheetExpectedBody);
+
+                //Create test scenario
+                extentReportService.createNewTest(mapInfoTesting.get("Test Scenario").toString(), "Anonymous", "Testing API", "Api platform");
+                LogsService.appendLog(Status.INFO.toString(), "Start Data-" + i, extentReportService, "");
+
+                // I make this condition just for the test
+                if (i==1){
+                    apiTest.hitAPIProcessOrder(mapInfoTesting, mapParametersBody, mapExpectedResponse, mapExpectedBody, extentReportService);
+
+                }else{
+                    //Choose Method
+                    if(((String) mapInfoTesting.get("Method")).equalsIgnoreCase("POST"))
+                        apiTest.hitAPIPost(mapInfoTesting, mapParametersBody, mapExpectedResponse, mapExpectedBody, extentReportService);
+                    else
+                        apiTest.hitAPIGet(mapInfoTesting, mapExpectedResponse, mapExpectedBody, extentReportService);
+                }
+
+            }
+        }
+        catch (IOException e) {
+            LogsService.appendLog(Status.FAIL.toString(), "Failed get path ", extentReportService, "");
+            e.printStackTrace();
+        }
+    }
 
     public Sheet readDataTestCase(String strSheet, String strPathDatatable) throws IOException {
         File file = new File(strPathDatatable);
