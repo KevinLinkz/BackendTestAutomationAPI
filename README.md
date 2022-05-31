@@ -1,6 +1,7 @@
 # BackendTestAutomationAPI
-My Second Framework for test 1
-Beside my explanation with my answer on the email, I'll explained this framework more details.
+This is My Second Framework for test 1
+
+I'll explained this framework more details.
 This framework use Microsoft excel for the datas and it'll make a report using Extent Report.
 The purpose of this framework is for Manual Testing actually.
 The reason a lot of screenshots, because it will be evidence for internal audits.
